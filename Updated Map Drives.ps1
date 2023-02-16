@@ -28,15 +28,15 @@ $userExtracted = $CurrentUserLoggedIn.split("\")[1]
 
 
 #Map common drives
-New-PSDrive -Name "P" -PSProvider "FileSystem" -Root "\\BCFFPS1VP\public" -Persist
-New-PSDrive -Name "S" -PSProvider "FileSystem" -Root "\\BCFFPS1VP\Scan" -Persist
-New-PSDrive -Name "O" -PSProvider "FileSystem" -Root "\\BCFFPS1VP\Operations\Safety" -Persist
+New-PSDrive -Name "P" -PSProvider "FileSystem" -Root "\\server\public" -Persist
+New-PSDrive -Name "S" -PSProvider "FileSystem" -Root "\\server\" -Persist
+New-PSDrive -Name "O" -PSProvider "FileSystem" -Root "\\server\ops\" -Persist
 
 
 #map home drive
 
 try {
-    New-PSDrive -Name "H" -PSProvider "FileSystem" -Root "\\bcffps3vp\home$\$userExtracted" -Persist -ErrorAction Stop
+    New-PSDrive -Name "H" -PSProvider "FileSystem" -Root "\\server\home$\$userExtracted" -Persist -ErrorAction Stop
     
 }
 catch [System.Management.Automation.ActionPreferenceStopException]
