@@ -19,7 +19,7 @@ if ((Test-Admin) -eq $false)  {
 #extract domain with Login ID (BECN\LOGINID)
 $CurrentUserLoggedIn = (Get-CimInstance -ClassName Win32_ComputerSystem | Select-Object username).username
 
-#Splits domain from LoginID, "\" as the delim. for example, $extractedStringCurrentUser would output 
+#Splits domain from LoginID, "\" as the delim. 
 $output = $CurrentUserLoggedIn.split("\")[0]
 
 #Outputs everything AFTER the delim ("\"), outputting the loginID of the computer.
