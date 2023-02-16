@@ -16,7 +16,7 @@ if ((Test-Admin) -eq $false)  {
 
 'running with full privileges'#>
 
-#extract domain with Login ID (BECN\LOGINID)
+#extract domain with LoginID (DOMAIN\LOGINID)
 $CurrentUserLoggedIn = (Get-CimInstance -ClassName Win32_ComputerSystem | Select-Object username).username
 
 #Splits domain from LoginID, "\" as the delim. 
